@@ -1,0 +1,292 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+body {
+  line-height: 1.5;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  outline: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: rgb(41, 183, 65);
+  /* khong boi den van ban */
+  -moz-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  font-family: "poppins", sans-serif;
+}
+
+.wrapper {
+  background: #fff;
+  border-radius: 10px 10px;
+  height: 487.8px;;
+  width: 450px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper header {
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+  background-color: rgb(247, 239, 239);
+  border-radius: 10px 10px 0 0;
+}
+
+header .current-date {
+  font-size: 1.45rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+header .current-date:hover {
+  background-color: #dad2d2;
+}
+
+header .icons span {
+  height: 38px;
+  width: 38px;
+  background: #f2f2f2;
+  text-align: center;
+  color: #878787;
+  font-size: 1.9rem;
+  line-height: 38px;
+  border-radius: 10px;
+  background: #f2f2f2;
+  cursor: pointer;
+}
+
+header .icons span:hover {
+  background-color: #d8d1d1;
+}
+
+header .icons span:last-child {
+  margin-right: -10px;
+}
+
+.calendar {
+  padding: 20px;
+}
+
+.calendar ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.calendar .days {
+  margin-bottom: 20px;
+}
+
+.calendar .weeks li {
+  font-weight: 500;
+}
+
+.calendar .days li {
+  z-index: 1;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.days li.inactive {
+  color: #aaa;
+}
+
+.days li.active {
+  color: #fff;
+}
+
+.calendar ul li {
+  position: relative;
+  width: calc(100% / 7);
+}
+
+/* hinh tron bao ngay */
+.calendar .days li::before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.days li:hover:before {
+  background: #979595;
+}
+
+.days li:hover::before {
+  background: #f2f2f2;
+}
+
+.days li.active::before {
+  background: rgb(47, 31, 200);
+}
+
+.month-list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(241, 235, 235);
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 0px;
+  transform: scale(1.5);
+  color: rgb(12, 11, 11);
+
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+  z-index: 100;
+}
+
+.month-list.show {
+  transform: scale(1);
+  visibility: visible;
+  pointer-events: visible;
+}
+
+.month-list > div {
+  display: gird;
+  place-items: center;
+  margin-top: 30px;
+}
+
+.month-list > div > div {
+  width: 100%;
+  height: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--color-txt);
+}
+
+.month-list > div > div:hover {
+  background-color: rgb(109, 109, 129);
+  border-radius: 50%;
+}
+
+#year-picker {
+  text-align: center;
+  background-color: rgb(241, 235, 235);
+  border-radius: 10px 10px 0 0;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.month-list .icons span {
+  height: 38px;
+  width: 38px;
+  background: #f2f2f2;
+  text-align: center;
+  color: #878787;
+  font-size: 1.9rem;
+  line-height: 38px;
+  background: #f2f2f2;
+  cursor: pointer;
+  display: flex;
+  float: right;
+}
+
+.year-list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(241, 235, 235);
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 0px;
+  transform: scale(1.5);
+  color: rgb(12, 11, 11);
+
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+  z-index: 103;
+}
+
+.year-list.show {
+  transform: scale(1);
+  visibility: visible;
+  pointer-events: visible;
+}
+
+.year-list > div {
+  display: gird;
+  place-items: center;
+  margin-top: 30px;
+}
+
+.year-list > div > div {
+  width: 100%;
+  height: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--color-txt);
+}
+
+.year-list > div > div:hover {
+  background-color: rgb(109, 109, 129);
+  border-radius: 50%;
+  background: #dae50c;
+}
+
+.current-year {
+  font-size: 1.45rem;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.current-year:hover {
+  background-color: #c72d2d;
+}

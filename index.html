@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calendar</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+   
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div id="month-picker" class="current-date"></div>
+        <div class="icons">
+          <span id="prev" class="material-symbols-outlined">
+            arrow_drop_up
+          </span>
+          <span id="next" class="material-symbols-outlined">
+            arrow_drop_down
+          </span>
+        </div>
+      </header>
+
+      <div class="calendar">
+        <ul class="weeks">
+          <li>Sun</li>
+          <li>Mon</li>
+          <li>Tue</li>
+          <li>Wed</li>
+          <li>Thu</li>
+          <li>Fri</li>
+          <li>Sat</li>
+        </ul>
+        <ul class="days"></ul>
+      </div>
+      <div class="month-list">
+        <div id="year-picker" class="current-year"></div>
+        <div></div>
+        <div class="icons">
+          <span id="year-change" class="material-symbols-outlined">
+            arrow_drop_down
+          </span>
+          <span id="year-change-prev" class="material-symbols-outlined">
+            arrow_drop_up
+          </span>
+        </div>
+      </div>
+      <div class="year-list"></div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
